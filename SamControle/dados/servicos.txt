@@ -1,0 +1,2 @@
+1 2 troca de 0.00
+1 2 Troca_de_corrente Sem_filtro_de_ar 150.00
