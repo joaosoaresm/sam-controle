@@ -1,3 +1,4 @@
+// Incluindo as bibliotecas necessárias e tambem conectando os arquivos de cabeçalho correspondentes aos módulos do sistema
 #include <stdio.h>
 #include <locale.h>
 #include <windows.h>

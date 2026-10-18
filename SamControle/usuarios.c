@@ -37,22 +37,22 @@ int carregarUsuarios(Usuario lista[]) {
     fclose(arquivo);
     return total;
 }
+
 // Função auxiliar para salvar um novo utilizador no final do ficheiro txt
 void salvarNovoUsuario(Usuario u) {
     FILE *arquivo = fopen("dados/usuarios.txt", "a");
     if (arquivo != NULL) {
         fprintf(arquivo, "%s %s %d\n", u.login, u.senha, u.tipoPerfil);
         fclose(arquivo);
-    };
+    }
 }
 
 void menuUsuarios(){
     int opcaoUsuario;
     Usuario listaUsuarios[10];
     int totalUsuarios = 0;
-    int encontrou = -1;
 
-    //carrega os utilizadores gravados no ficheiro assim que o módulo abre
+    // Carrega os utilizadores gravados no ficheiro assim que o módulo abre
     totalUsuarios = carregarUsuarios(listaUsuarios);
 
     char loginInput[30];
@@ -61,12 +61,22 @@ void menuUsuarios(){
     int i;
     int encontrado;
 
+    // Sincroniza o índice local caso já exista uma sessão global ativa
+    if (perfilGlobalLogado != 0) {
+        for (i = 0; i < totalUsuarios; i++) {
+            if (listaUsuarios[i].tipoPerfil == perfilGlobalLogado) {
+                logadoIndex = i;
+                break;
+            }
+        }
+    }
+
     do{
         printf("\n===============================\n");
         printf("        MODULO DE UTILIZADORES       \n");
         printf("===============================\n");
         if (logadoIndex == -1){
-            printf("Status: Nao autenticado");
+            printf("Status: Nao autenticado\n"); // Corrigido com \n
         } else {
             printf("Status: Logado com '%s' (%s)\n",
                 listaUsuarios[logadoIndex].login,
@@ -83,7 +93,6 @@ void menuUsuarios(){
         scanf("%d", &opcaoUsuario);
 
         switch(opcaoUsuario) {
-            // case 1 ==============================================================================
             case 1:
                 printf("\n--- AUTORIZACAO DE SISTEMA ---\n");
                 printf("LOGIN: ");
@@ -101,32 +110,29 @@ void menuUsuarios(){
                 }
                 
                 if (encontrado != -1) {
-                    logadoIndex = encontrou;
-                    // Atualiza a sessão global com base no utilizador logado
+                    logadoIndex = encontrado;
                     perfilGlobalLogado = listaUsuarios[logadoIndex].tipoPerfil;
                     printf("\n[SUCESSO] Acesso autorizado!\n");
                 } else {
                     printf("\n[ERRO] Login ou senha incorretos!\n");
                 }
                 break;
-             //FIM case 1 ==========================================================================
-            // case 2 ==============================================================================
+
             case 2:
-            if (logadoIndex != -1 && listaUsuarios[logadoIndex].tipoPerfil == 1){
-                if (totalUsuarios < 15) { //AQUI DEFINe O LIMITE DE CADASTRO DE ATENDENTE/ADMIN
-                    printf("\n--- REGISTO DE NOVO UTILIZADOR ---\n");
-                    printf("Novo Login: ");
-                    scanf("%s", listaUsuarios[totalUsuarios].login);
-                    printf("Nova Senha: ");
-                    scanf("%s", listaUsuarios[totalUsuarios].senha);
-                    printf("Tipo de Perfil (1 - Administrador | 2 - Atendente): ");
-                    scanf("%d", &listaUsuarios[totalUsuarios].tipoPerfil);
+                if (logadoIndex != -1 && listaUsuarios[logadoIndex].tipoPerfil == 1){
+                    if (totalUsuarios < 15) {
+                        printf("\n--- REGISTO DE NOVO UTILIZADOR ---\n");
+                        printf("Novo Login: ");
+                        scanf("%s", listaUsuarios[totalUsuarios].login);
+                        printf("Nova Senha: ");
+                        scanf("%s", listaUsuarios[totalUsuarios].senha);
+                        printf("Tipo de Perfil (1 - Administrador | 2 - Atendente): ");
+                        scanf("%d", &listaUsuarios[totalUsuarios].tipoPerfil);
 
-                     // Guarda permanentemente no ficheiro usuarios.txt
-                    salvarNovoUsuario(listaUsuarios[totalUsuarios]);
+                        salvarNovoUsuario(listaUsuarios[totalUsuarios]);
 
-                    totalUsuarios++;
-                    printf("\n[SUCESSO] Utilizador registado e gravado no disco!\n");
+                        totalUsuarios++;
+                        printf("\n[SUCESSO] Utilizador registado e gravado no disco!\n");
                     } else {
                         printf("\n[AVISO] Limite maximo de utilizadores atingido!\n");
                     }
@@ -134,8 +140,7 @@ void menuUsuarios(){
                     printf("\n[ACESSO NEGADO] Apenas um Administrador autenticado pode registar utilizadores!\n");
                 }
                 break;
-            // FIM case 2 ==============================================================================
-            // case 3 ==================================================================================
+
             case 3:
                 if (logadoIndex != -1) {
                     logadoIndex = -1;
@@ -145,12 +150,10 @@ void menuUsuarios(){
                     printf("\n[INFO] Nao ha nenhuma sessao ativa.\n");
                 }
                 break;
-            // FIM case 3 ==============================================================================
-            // case 0 ==================================================================================
+
             case 0:
                 printf("\nA retornar ao Menu Principal...\n");
                 break;
-            // FIM case 0 ==============================================================================
                 
             default:
                 printf("\nOpcao invalida! Tente novamente.\n");
