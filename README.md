@@ -27,7 +27,7 @@ Sistema desktop de console em linguagem C para gestão de clientes, equipamentos
 | [04-definition-of-done.md](./docs/scrum/04-definition-of-done.md) | Definition of Done da equipe |
 | [sprints/](./docs/scrum/sprints/) | Um documento por Sprint (objetivo, tarefas, review, retrospectiva) |
 
-Documentação acadêmica completa (Word/PDF) em [`docs/manual-pim/`](./docs/manual-pim-II/).
+Documentação acadêmica completa (Word/PDF) em [`docs/manual-pim-II/`](./docs/manual-pim-II/).
 
 ### Integrantes do grupo
 
