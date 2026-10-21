@@ -25,9 +25,9 @@ Sistema desktop de console em linguagem C para gestão de clientes, equipamentos
 | [02-product-backlog.md](./docs/scrum/02-product-backlog.md) | Backlog do produto, ligado aos requisitos e às sprints |
 | [03-user-stories.md](./docs/scrum/03-user-stories.md) | User stories detalhando cada item do backlog |
 | [04-definition-of-done.md](./docs/scrum/04-definition-of-done.md) | Definition of Done da equipe |
-| [sprints/](./docs/scrum/sprints/) | Um documento por Sprint (objetivo, tarefas, review, retrospectiva) |
+| [sprints/](./docs/Scrum/Sprints) | Um documento por Sprint (objetivo, tarefas, review, retrospectiva) |
 
-Documentação acadêmica completa (Word/PDF) em [/docs/README.md](https://github.com/samueeljr/sam-controle/blob/main/docs/).
+Documentação acadêmica completa (Word/PDF) em [/docs/README.md](./docs/).
 
 ### Integrantes do grupo
 
