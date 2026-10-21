@@ -8,8 +8,9 @@ Bem-vindo à central de documentação oficial do **[nome do projeto]**. Este di
 
 | Secção / Pasta | Descrição | Conteúdo / Ficheiros |
 | :--- | :--- | :--- |
-| **[Manual PIM](./manual-pim-II.pdf)** | Relatório acadêmico oficial completo do projeto | Ficheiro PDF/Word (`manual-pim-ii.pdf`) |
-| **[Scrum & Requisitos](./Scrum/)** | Artefatos de gestão ágil, requisitos e histórias de utilizador | Backlog, User Stories e Registo de Sprints |
+| **[Documento PIM](#)** | Documento oficial do PIM  | Ficheiro PDF/Word (`#.pdf`) |
+| **[Manual PIM](./manual-pim-II.pdf)** | Relatório acadêmico oficial completo do projeto | Ficheiro PDF (`manual-pim-ii.pdf`) |
+| **[Scrum & Requisitos](./Scrum)** | Artefatos de gestão ágil, requisitos e histórias de utilizador | Backlog, User Stories e Registo de Sprints |
 | **[Diagramas](./Diagramas/)** | Modelagem visual do sistema (Casos de Uso, Classes, etc.) | Imagens exportadas (`.png` / `.jpg`) |
 
 ---
