@@ -39,3 +39,32 @@ Documentação acadêmica completa (Word/PDF) em [/docs/README.md](https://githu
 | Dev | Diogo Issao Andrade Okuda | H967GH9 |
 | Dev | Gustavo Paiva de Oliveira | R240IE4 |
 | Dev | João Vitor Soares de Moraes | R344290 |
+
+<!-- ## Estrutura do Repositório
+
+```text
+sam-controle/
+├── README.md                  <-- Apresentação principal do projeto
+├── SamControle/               <-- Código-fonte em C (módulos do sistema)
+│   ├── main.c
+│   ├── usuarios.c
+│   ├── usuarios.h
+│   ├── clientes.c
+│   ├── clientes.h
+│   ├── equipamentos.c
+│   ├── equipamentos.h
+│   ├── servicos.c
+│   ├── servicos.h
+│   ├── sam_controle.exe       <-- Executável compilado
+│   └── dados/                 <-- Ficheiros .txt gerados (ex: usuarios.txt)
+└── docs/                      <-- Toda a documentação académica e de gestão
+    ├── README.md              <-- Índice de navegação da documentação
+    ├── manual-pim-II/         <-- Relatório acadêmico oficial completo (Word/PDF)
+    ├── scrum/                 <-- Requisitos (RF, RNF) e Histórias de Utilizador
+    └── diagramas/             <-- Imagens exportadas do Astah (Casos de Uso, Classes)
+        ├── caso-de-uso.png
+        └── diagrama-classes.png
+```
+ADICIONAR NO README ASSIM QUE ESTIVER COMPLETO E ATUALIZADO!
+-->
+
