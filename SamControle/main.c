@@ -1,7 +1,9 @@
 // Incluindo as bibliotecas necessárias e tambem conectando os arquivos de cabeçalho correspondentes aos módulos do sistema
 #include <stdio.h>
 #include <locale.h>
+#ifdef _WIN32
 #include <windows.h>
+#endif
 #include "usuarios.h"
 #include "clientes.h"
 #include "equipamentos.h"
