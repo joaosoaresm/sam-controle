@@ -2,15 +2,15 @@
 #define SERVICOS_H
 
 typedef struct {
-    char cpfCliente[20];      // Vínculo com o cliente
-    int numeroSerieEquipamento; // ID da máquina associada
-    char descricao[100];      // Descrição do serviço solicitado
-    char observacoes[100];    // Observações técnicas
-    float precoFinal;         // Preço da manutenção/serviço
+    int idServico;
+    char cpfCliente[15];
+    int numeroSerieEquipamento;
+    int quantidade;
+    char descricao[100];
+    float precoUnitario;
+    float precoFinal;
 } Servico;
 
-// Funções principais do módulo de serviços
-void menuServicos();          // Menu do atendente (Registar e gerir)
-void portalClienteServicos(); // Menu para o cliente consultar os seus aparelhos e serviços
+void menuServicos();
 
 #endif
